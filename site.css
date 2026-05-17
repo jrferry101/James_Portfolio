@@ -16,24 +16,57 @@
 .site-hamburger {
   display: none;
   position: absolute;
-  right: 0;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
   text-decoration: none;
-  padding: 10px;
-  width: 30px;
-  height: 30px;
-  box-sizing: content-box;
+  padding: 16px 10px;
+  cursor: pointer;
+}
+
+/* 3 bars drawn as gradients on a single element — no pseudo-elements, no clipping */
+.site-hamburger span {
+  display: block;
+  width: 22px;
+  height: 16px;
+  background:
+    linear-gradient(#ffffff, #ffffff) 0 0   / 100% 2px no-repeat,
+    linear-gradient(#ffffff, #ffffff) 0 7px / 100% 2px no-repeat,
+    linear-gradient(#ffffff, #ffffff) 0 14px/ 100% 2px no-repeat;
+  transition: background 0.3s;
+}
+
+/* Suppress the extra bars that main_style.css generates via ::before/::after */
+.site-hamburger span::before,
+.site-hamburger span::after {
+  display: none !important;
+}
+
+/* Dark bars when nav is scrolled */
+#site-nav.scrolled .site-hamburger span {
+  background:
+    linear-gradient(#2a2a2a, #2a2a2a) 0 0   / 100% 2px no-repeat,
+    linear-gradient(#2a2a2a, #2a2a2a) 0 7px / 100% 2px no-repeat,
+    linear-gradient(#2a2a2a, #2a2a2a) 0 14px/ 100% 2px no-repeat;
 }
 
 @media screen and (max-width: 992px) {
   #site-nav {
-    padding: 5px 20px !important;
+    padding: 0 20px !important;
+    min-height: 50px !important;
+    overflow: visible !important;
   }
   .nav-desktop-links {
     display: none !important;
   }
+  /* Override top/transform so it's centered in the 50px nav, not a 0-height div */
   .site-hamburger {
     display: block !important;
+    top: 4px !important;
+    transform: none !important;
+  }
+  /* Mobile nav must sit above #site-nav so the X button is clickable */
+  body.nav-open #navMobile {
+    z-index: 10000 !important;
   }
 }
