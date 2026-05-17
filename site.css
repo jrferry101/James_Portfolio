@@ -56,14 +56,20 @@
     min-height: 50px !important;
     overflow: visible !important;
   }
+  /* Remove position:relative from the inner div so #site-nav becomes the containing block */
+  #site-nav > div {
+    position: static !important;
+  }
   .nav-desktop-links {
     display: none !important;
   }
-  /* Override top/transform so it's centered in the 50px nav, not a 0-height div */
+  /* Centered within #site-nav (position:fixed), not the collapsed inner div */
   .site-hamburger {
     display: block !important;
-    top: 4px !important;
-    transform: none !important;
+    position: absolute !important;
+    top: 50% !important;
+    right: 20px !important;
+    transform: translateY(-50%) !important;
   }
   /* Mobile nav must sit above #site-nav so the X button is clickable */
   body.nav-open #navMobile {
