@@ -1,0 +1,13 @@
+/* Nav link sizing — Montserrat to match Weebly theme */
+#site-nav a {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.05em !important;
+  padding: 14px 24px !important;
+  transition: opacity 300ms ease;
+}
+
+#site-nav a:hover {
+  opacity: 0.6;
+}
