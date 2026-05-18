@@ -11,7 +11,7 @@ window.wSlideshow = {
     var fixedHeight = config.fixedHeight ? parseInt(config.fixedHeight) : null;
 
     function imgSrc(url) {
-      return '/uploads/' + url.replace(/\\\//g, '/');
+      return '/' + url.replace(/\\\//g, '/');
     }
 
     var wrapper = document.createElement('div');
