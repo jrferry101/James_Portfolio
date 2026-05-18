@@ -1,5 +1,7 @@
 # James Ferry — Portfolio Site
 
+**Live site: [james-ferry.vercel.app](https://james-ferry.vercel.app)**
+
 A personal portfolio site showcasing my product management work across Adobe, Microsoft, We Care Insurance, and Global Payments.
 
 ## About
